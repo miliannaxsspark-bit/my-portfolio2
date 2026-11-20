@@ -1,0 +1,129 @@
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ибадулла Аяулым Нұрмаханбетқызының жеке портфолиосы">
+<title>Аяулым — Жеке портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#514653;--muted:#887b88;--rose:#c78fa9;--rose-dark:#a96f8c;--pink:#f7e9ef;--lilac:#eeeafa;--cream:#fffaf8;--white:#fff;--line:#f0e3e9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.7}
+a{color:inherit}.container{width:min(1080px,90%);margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:25px 0}
+.brand{font-weight:700;letter-spacing:2px;color:var(--rose-dark);font-size:13px}
+nav{display:flex;gap:23px;flex-wrap:wrap}nav a{text-decoration:none;color:var(--muted);font-size:13px}nav a:hover{color:var(--rose-dark)}
+.hero{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(120deg,#f8e9ef,#f1edfb 70%,#fff7f4);padding:clamp(38px,7vw,82px);min-height:470px;display:flex;align-items:center;margin:24px 0 70px}
+.hero:after{content:"✿";position:absolute;right:8%;top:8%;font-size:clamp(110px,22vw,230px);color:rgba(188,143,169,.16);transform:rotate(-15deg)}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.eyebrow{display:inline-block;border:1px solid #e8cbd8;border-radius:30px;padding:6px 14px;color:var(--rose-dark);font-size:12px;letter-spacing:.5px;background:rgba(255,255,255,.45)}
+h1,h2,.serif{font-family:'Playfair Display',Georgia,serif}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.08;font-weight:600;margin:22px 0 16px;letter-spacing:-1.5px}
+h1 span{color:var(--rose-dark)}
+.hero p{max-width:600px;color:#786b79;font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.btn{display:inline-block;text-decoration:none;padding:12px 20px;border-radius:30px;background:var(--rose-dark);color:white;font-weight:600;font-size:13px;box-shadow:0 8px 20px rgba(169,111,140,.16)}
+.btn.outline{background:rgba(255,255,255,.55);color:var(--rose-dark);border:1px solid #e7cbd8;box-shadow:none}
+section{padding:18px 0 55px;scroll-margin-top:25px}
+.section-label{color:var(--rose-dark);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+h2{font-size:35px;font-weight:600;margin:5px 0 20px}
+.intro{max-width:780px;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:stretch}
+.soft-card,.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 10px 35px rgba(112,82,101,.045)}
+.fact{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.fact:last-child{border:0}
+.fact b{min-width:85px;color:var(--rose-dark)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(112,82,101,.09)}
+.icon{width:42px;height:42px;display:grid;place-items:center;background:var(--pink);border-radius:14px;font-size:19px;margin-bottom:14px}
+.card h3{margin:0 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14px}
+.chips{margin-top:13px}.chip{display:inline-block;background:var(--lilac);color:#766b91;border-radius:30px;padding:5px 11px;margin:4px 4px 0 0;font-size:12px}
+.project{background:linear-gradient(145deg,#fff,#fff8fb)}
+.project small{display:block;color:var(--rose-dark);font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.note{color:var(--muted);font-size:12px;margin-top:15px}
+.contact-box{background:linear-gradient(120deg,#f8eaf0,#f1edfb);border-radius:25px;padding:30px}
+.contact-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
+.contact-links a{background:rgba(255,255,255,.72);padding:10px 15px;border-radius:13px;text-decoration:none;font-size:13px;overflow-wrap:anywhere}
+footer{text-align:center;padding:35px 0 45px;color:#a294a0;font-size:12px}
+@media(max-width:700px){header{align-items:flex-start;flex-direction:column;gap:14px}nav{gap:14px}.hero{margin-top:12px;min-height:400px}.about-grid{grid-template-columns:1fr}h2{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="brand">AY AULYM · PORTFOLIO</div>
+  <nav><a href="#about">Мен туралы</a><a href="#skills">Дағдылар</a><a href="#projects">Жобалар</a><a href="#contact">Байланыс</a></nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">IT STUDENT · JUNIOR DEVELOPER</span>
+      <h1>Сәлем, мен<br><span>Аяулыммын.</span></h1>
+      <p>Идеяларды технологиямен байланыстырып, пайдалы дүниелер жасауды үйреніп жүрген бағдарламалау студентімін.</p>
+      <div class="actions">
+        <a class="btn" href="#projects">Жобаларымды көру ↗</a>
+        <a class="btn outline" href="#about">Мен туралы</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="section-label">01 / танысу</div><h2>Мен туралы</h2>
+    <div class="about-grid">
+      <div class="soft-card">
+        <p class="intro">Менің толық аты-жөнім — <b>Ибадулла Аяулым Нұрмаханбетқызы</b>. Алматы политехникалық колледжінде бағдарламалау мамандығы бойынша 3-курста білім аламын. Бағдарламалау негіздерін меңгеріп, практикалық тапсырмалар орындап жүрмін. Жаңа технологияларды зерттеуге, шығармашылық идеяларды жүзеге асыруға және командамен жұмыс істеуге қызығамын.</p>
+        <p class="intro">Мақсатым — білімімді үнемі дамытып, адамдардың өмірін жеңілдететін пайдалы цифрлық жобалар жасау.</p>
+      </div>
+      <div class="soft-card">
+        <div class="fact"><b>Аты-жөні</b><span>Ибадулла Аяулым</span></div>
+        <div class="fact"><b>Оқу орны</b><span>Алматы политехникалық колледжі</span></div>
+        <div class="fact"><b>Бағыты</b><span>Бағдарламалау</span></div>
+        <div class="fact"><b>Курс</b><span>3-курс</span></div>
+        <div class="fact"><b>Қала</b><span>Алматы</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">02 / қабілеттер</div><h2>Дағдыларым</h2>
+    <div class="grid">
+      <article class="card"><div class="icon">⌘</div><h3>Бағдарламалау</h3><p>Алгоритмдер мен бағдарламалау негіздерін практика арқылы меңгеру.</p><div class="chips"><span class="chip">C#</span><span class="chip">Python</span></div></article>
+      <article class="card"><div class="icon">✧</div><h3>Web әзірлеу</h3><p>Веб-беттердің құрылымын құру және сыртқы көрінісін безендіру.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span></div></article>
+      <article class="card"><div class="icon">♡</div><h3>Жеке қасиеттер</h3><p>Үйренуге құштарлық, жауапкершілік, ізденіс және командамен жұмыс.</p><div class="chips"><span class="chip">Шығармашылық</span><span class="chip">Команда</span><span class="chip">Ізденіс</span></div></article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">03 / тәжірибе</div><h2>Жобаларым</h2>
+    <div class="grid">
+      <article class="card project"><small>01 · C#</small><h3>Оқу тапсырмалары</h3><p>Шартты операторлар, циклдер және деректермен жұмыс істеу бойынша практикалық жұмыстар.</p></article>
+      <article class="card project"><small>02 · PYTHON</small><h3>Python жаттығулары</h3><p>Python тілінің негізгі мүмкіндіктерін үйренуге арналған шағын бағдарламалар.</p></article>
+      <article class="card project"><small>03 · WEB</small><h3>Веб-сайт әзірлеу</h3><p>HTML және CSS көмегімен сайт құрылымы мен интерфейсін жасау тәжірибесі.</p></article>
+    </div>
+    <p class="note">Кеңес: нақты жобаларың дайын болған сайын мұнда скриншот, қысқаша сипаттама және GitHub сілтемесін қос.</p>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">04 / байланыс</div><h2>Байланыста болайық</h2>
+    <div class="contact-box">
+      <p>Жаңа идеяларға, тәжірибе алмасуға және командалық жобаларға ашықпын.</p>
+      <div class="contact-links">
+        <a href="mailto:miliannaxsspark@gmail.com">✉ miliannaxsspark@gmail.com</a>
+        <a href="tel:+77085204605">☎ +7 708 520 46 05</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>Жылы ниетпен жасалды · © 2026 Ибадулла Аяулым Нұрмаханбетқызы</footer>
+</div>
+</body>
+</html>'''
+
+path = Path("/mnt/data/portfolio_ayaulym_soft.html")
+path.write_text(html, encoding="utf-8")
+print(f"Жаңартылған нәзік дизайндағы портфолио дайын: {path}")
